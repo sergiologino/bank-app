@@ -35,3 +35,5 @@ POST
 	"phoneNo": "String",
 	"password": "String"
 }
+
+![image](https://user-images.githubusercontent.com/90287274/221712348-ae238654-f815-4089-9c56-79ae752f2481.png)
