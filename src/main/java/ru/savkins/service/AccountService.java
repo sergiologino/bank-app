@@ -5,7 +5,7 @@ import org.springframework.stereotype.Service;
 
 import ru.savkins.dao.AccountsRepository;
 import ru.savkins.model.Accounts;
-
+// здесь сервисный слой - бизнес-логика сервиса, хотя здесь ее минимум
 @Service
 public class AccountService {
 	@Autowired
@@ -27,16 +27,16 @@ public class AccountService {
 		return accountRepository.findBalanceByAcctID(acctID);
 	}
 
-	public void depositAmount(int acctID, int amount) {
+	public void putMoney(int acctID, int amount) {
 		accountRepository.saveBalanceByAcctID(acctID, amount);
 	}
 
-	public void withdrawAmount(int acctID, int amount) {
-		accountRepository.withdrawAmountByAcctID(acctID, amount);
+	public void takeMoney(int acctID, int amount) {
+		accountRepository.takeMoneyByAcctID(acctID, amount);
 	}
 
-	public void transferAmount(int acctID, int destAcctID, int amount) {
-		accountRepository.withdrawAmountByAcctID(acctID, amount);
+	public void sendMoney(int acctID, int destAcctID, int amount) {
+		accountRepository.takeMoneyByAcctID(acctID, amount);
 		accountRepository.saveBalanceByAcctID(destAcctID, amount);
 	}
 

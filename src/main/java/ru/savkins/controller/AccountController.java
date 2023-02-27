@@ -18,7 +18,7 @@ public class AccountController {
 	@Autowired
 	private LoggerController loggerController;
 
-	// createAccount happens upon createCustomer
+	// createAccount вызывается при создании клиента, не имеет http вызова
 	public void createAccount(int acctID, int balance, String acctStatus) {
 		Accounts acct = new Accounts(acctID, balance, acctStatus);
 		accountService.createAccount(acct);
@@ -31,29 +31,29 @@ public class AccountController {
 	}
 
 	// depositAmount
-	@PutMapping("/account/{acctID}/deposit/{amount}")
+	@PutMapping("/account/{acctID}/putmoney/{amount}")
 	public void depositAmount(@PathVariable int acctID, @PathVariable int amount) {
 		int initBal = getBalance(acctID);
-		accountService.depositAmount(acctID, amount);
+		accountService.putMoney(acctID, amount);
 		Logger logger = new Logger(acctID, "Deposited", "Success", initBal, initBal + amount);
 		loggerController.addLog(logger);
 	}
 
 	// withdrawAmount
-	@PutMapping("/account/{acctID}/withdraw/{amount}")
-	public void withdrawAmount(@PathVariable int acctID, @PathVariable int amount) {
+	@PutMapping("/account/{acctID}/takeMoney/{amount}")
+	public void takeMoney(@PathVariable int acctID, @PathVariable int amount) {
 		int initBal = getBalance(acctID);
-		accountService.withdrawAmount(acctID, amount);
+		accountService.takeMoney(acctID, amount);
 		Logger logger = new Logger(acctID, "Withdrawn", "Success", initBal, initBal - amount);
 		loggerController.addLog(logger);
 	}
 
 	// transferAmount
-	@PutMapping("/account/{acctID}/transfer/{destAcctID}/{amount}")
-	public void transferAmount(@PathVariable int acctID, @PathVariable int destAcctID, @PathVariable int amount) {
+	@PutMapping("/account/{acctID}/sendmoney/{destAcctID}/{amount}")
+	public void sendMoney(@PathVariable int acctID, @PathVariable int destAcctID, @PathVariable int amount) {
 		int initBalSender = getBalance(acctID);
 		int initBalReceiver = getBalance(destAcctID);
-		accountService.transferAmount(acctID, destAcctID, amount);
+		accountService.sendMoney(acctID, destAcctID, amount);
 		Logger loggerSender = new Logger(acctID, "Transferred", "Success", initBalSender, initBalSender - amount);
 		loggerController.addLog(loggerSender);
 		Logger loggerReceiver = new Logger(destAcctID, "Received", "Success", initBalReceiver,

@@ -7,19 +7,19 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ru.savkins.model.Accounts;
-
+// интерфейс, расширяющий стандартный crud спринга для работы со счетами клиента
 public interface AccountsRepository extends CrudRepository<Accounts, Integer>, JpaRepository<Accounts, Integer> {
 	@Query("select balance from Accounts where acctID = ?1")
-	public int findBalanceByAcctID(int acctID);
+	int findBalanceByAcctID(int acctID);
 
 	@Transactional
 	@Modifying(clearAutomatically = true)
 	@Query("update Accounts set balance = balance+?2 where acctID=?1")
-	public void saveBalanceByAcctID(int acctID, int balance);
+	void saveBalanceByAcctID(int acctID, int balance);
 
 	@Transactional
 	@Modifying(clearAutomatically = true)
 	@Query("update Accounts set balance = balance-?2 where acctID=?1")
-	public void withdrawAmountByAcctID(int acctID, int balance);
+	void takeMoneyByAcctID(int acctID, int balance);
 
 }

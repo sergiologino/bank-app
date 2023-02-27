@@ -2,11 +2,7 @@ package ru.savkins;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-/**
- * 
- * @author
- *
- */
+// final work by Savkin Sergey Java-23
 
 @SpringBootApplication
 public class BankApplication {

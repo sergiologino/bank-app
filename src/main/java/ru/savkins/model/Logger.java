@@ -3,16 +3,7 @@ package ru.savkins.model;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-//@Embeddable
-//class LoggerPk {
-//	@Column(name="acctID")
-//	public int acctID;
-//	
-//	@ManyToOne
-//	@JoinColumn(name="Account_ID")
-//	private Accounts acct;
-//}
-
+// здесь структура данных (модель, DAO) - свыойства отражают поля БД, + геттеры сеттеры и конструкторы
 @Entity
 public class Logger {
 //	@EmbeddedId
