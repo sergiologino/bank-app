@@ -1,20 +1,37 @@
-# Banking Application REST API using Spring Boot
-Banking Application REST API using Spring Boot and Spring Data JPA
+Банковский сервис с использованием REST API на  Spring Boot и JPA
 
-## Description:
-- Developed a REST API to create bank account and perform all banking operations
-- Integrated data and performed CRUD operations using Spring Data JPA; stored data in embedded Apache Derby Database.
+Можно посылать деньги, класть и снимать. Создавать клиента и счет к нему (аккаунт), смотреть историю операций
 
-## Instructions:
-- The repo consists of an Extras folder. It has an executable jar file(BankApp-0.0.1-SNAPSHOT.jar) and a file containing Request URI's. You can use URI's to construct API requests using an app like Postman.
+Использовал фреймворк Spring, БД PostgresSQL, Maven.
 
-## Steps to run the API:
-- In order to run the API, Java should be installed (https://www.youtube.com/watch?v=f7rT0h1Q5Wo).
-- Double click "BankApp-0.0.1-SNAPSHOT.jar".
-- Download link for Postman -> https://www.getpostman.com/downloads/
-- Open Postman and send requests.
+В процессе разработки конечно смотрел аналогичные задачи, советовался с программистами из моей командыи (работаю аналитиком в банке, стек такой же -java spring, postgres, kafka)
 
-##### NOTE: This is a Maven project. So there is no need to download external .jars
+Можно проверять через постман (после запуска дампа БД)
 
+Запросы для постмана:
 
-### Tech Stack: Spring Boot, Spring Data JPA, Java, SQL, Apache Derby, Maven, Spring Tool Suite
+GET
+// getAccountInfo	"/account/{acctID}"
+// getBalance	"/account/{acctID}/balance"
+//getCustomerInfo "/customer/{acctID}"
+
+DELETE
+//deleteCustomer "/customer/{acctID}"
+// deleteAccount	"/account/{acctID}"
+
+PUT
+// sendMoney "/account/{acctID}/sendmoney/{destAcctID}/{amount}"
+// takeMoney	"/account/{acctID}/withdraw/{amount}"
+// putMoney  "/account/{acctID}/putmoney/{amount}"
+
+POST
+// create customer "/customer"
+{
+     "acctID": "int",
+	"custName": "String",
+	"city": "String",
+	"state": "String",
+	"country": "String",
+	"phoneNo": "String",
+	"password": "String"
+}
