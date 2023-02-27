@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.transaction.annotation.Transactional;
 
 import ru.savkins.model.Accounts;
-// интерфейс, расширяющий стандартный crud спринга для работы со счетами клиента
+// интерфейс, расширяющий стандартный crud спринга для работы со счетами клиента (DAO)
 public interface AccountsRepository extends CrudRepository<Accounts, Integer>, JpaRepository<Accounts, Integer> {
 	@Query("select balance from Accounts where acctID = ?1")
 	int findBalanceByAcctID(int acctID);

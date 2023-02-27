@@ -2,7 +2,7 @@ package ru.savkins.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
-// здесь структура данных (модель, DAO) - свыойства отражают поля БД, + геттеры сеттеры и конструкторы
+// здесь структура данных (модель) - свыойства отражают поля БД, + геттеры сеттеры и конструкторы
 @Entity
 public class Accounts {
 	@Id
