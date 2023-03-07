@@ -1,0 +1,76 @@
+Use Postman or similar app to construct and send requests
+
+POST
+/customer
+{
+     "acctID": "1",
+	"custName": "Ankit",
+	"city": "Binghamton",
+	"state": "NY",
+	"country": "US",
+	"phoneNo": "1234",
+	"password": "ankit123"
+}
+
+POST
+/customer
+{
+     "acctID": "2",
+	"custName": "Akshay",
+	"city": "Nashville",
+	"state": "TN",
+	"country": "US",
+	"phoneNo": "12345",
+	"password": "akshay123"
+}
+
+DELETE
+/customer/{acctID}
+/account/{acctID}
+
+GET
+/customer/{acctID}
+/account/{acctID}/balance
+/account/{acctID}
+/account/{acctID}/logs
+
+PUT
+/account/{acctID}/deposit/{amount}
+/account/{acctID}/withdraw/{amount}
+/account/{acctID}/transfer/{destAcctID}/{amount}
+
+
+GET
+// getAccountInfo	"/account/{acctID}"
+// getBalance	"/account/{acctID}/balance"
+//getCustomerInfo "/customer/{acctID}"
+
+DELETE
+//deleteCustomer "/customer/{acctID}"
+// deleteAccount	"/account/{acctID}"
+
+PUT
+// sendMoney "/account/{acctID}/sendmoney/{destAcctID}/{amount}"
+// takeMoney	"/account/{acctID}/withdraw/{amount}"
+// putMoney  "/account/{acctID}/putmoney/{amount}"
+
+POST
+// create customer "/customer"
+{
+     "acctID": "int",
+	"custName": "String",
+	"city": "String",
+	"state": "String",
+	"country": "String",
+	"phoneNo": "String",
+	"password": "String"
+}
+
+
+
+
+
+
+
+
+
