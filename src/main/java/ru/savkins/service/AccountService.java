@@ -2,13 +2,13 @@ package ru.savkins.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import ru.savkins.dao.AccountsRepository;
 import ru.savkins.model.Accounts;
+
 // здесь сервисный слой - бизнес-логика сервиса, хотя здесь ее минимум
 @Service
 public class AccountService {
-
+	@Autowired
 	private AccountsRepository accountRepository;
 
 	public void createAccount(Accounts acct) {
@@ -39,5 +39,4 @@ public class AccountService {
 		accountRepository.takeMoneyByAcctID(acctID, amount);
 		accountRepository.saveBalanceByAcctID(destAcctID, amount);
 	}
-
 }
