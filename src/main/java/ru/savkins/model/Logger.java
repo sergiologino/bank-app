@@ -1,13 +1,11 @@
 package ru.savkins.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.*;
 
 // здесь структура данных (модель) - свыойства отражают поля БД, + геттеры сеттеры и конструкторы
 @Entity
 public class Logger {
-//	@EmbeddedId
-//	private LoggerPk id; 
+
 	@Id
 	private int acctID;
 	private String transacType;

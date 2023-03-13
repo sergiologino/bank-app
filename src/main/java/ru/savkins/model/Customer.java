@@ -1,33 +1,35 @@
 package ru.savkins.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 // здесь структура данных (модель) - свыойства отражают поля БД, + геттеры сеттеры и конструкторы
 @Entity
 public class Customer {
-
 	@Id
 	private int acctID;
-	private String custName;
+	private String custname;
 	private String city;
 	private String state;
 	private String country;
-	private String phoneNo;
+	private String phone_no;
 	private String password;
 
 	public Customer() {
 
 	}
 
-	public Customer(int acctID, String custName, String city, String state, String country, String phoneNo,
+	public Customer(int acctID, String custname, String city, String state, String country, String phone_no,
 			String password) {
 		super();
 		this.acctID = acctID;
-		this.custName = custName;
+		this.custname = custname;
 		this.city = city;
 		this.state = state;
 		this.country = country;
-		this.phoneNo = phoneNo;
+		this.phone_no = phone_no;
 		this.password = password;
 	}
 
@@ -40,11 +42,11 @@ public class Customer {
 	}
 
 	public String getCustName() {
-		return custName;
+		return custname;
 	}
 
-	public void setCustName(String custName) {
-		this.custName = custName;
+	public void setCustName(String custname) {
+		this.custname = custname;
 	}
 
 	public String getCity() {
@@ -72,11 +74,11 @@ public class Customer {
 	}
 
 	public String getPhoneNo() {
-		return phoneNo;
+		return phone_no;
 	}
 
 	public void setPhoneNo(String phoneNo) {
-		this.phoneNo = phoneNo;
+		this.phone_no = phoneNo;
 	}
 
 	public String getPassword() {

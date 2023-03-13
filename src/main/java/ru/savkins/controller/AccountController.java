@@ -1,21 +1,17 @@
 package ru.savkins.controller;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RestController;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 import ru.savkins.model.Accounts;
 import ru.savkins.model.Logger;
 import ru.savkins.service.AccountService;
 
 @RestController
 public class AccountController {
-	@Autowired
+
 	private AccountService accountService;
-	@Autowired
+
 	private LoggerController loggerController;
 
 	// createAccount вызывается при создании клиента, не имеет http вызова

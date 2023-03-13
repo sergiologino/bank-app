@@ -1,12 +1,18 @@
 package ru.savkins.model;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+
 // здесь структура данных (модель) - свыойства отражают поля БД, + геттеры сеттеры и конструкторы
 @Entity
 public class Accounts {
 	@Id
-	private int acctID;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+		private int acctID;
+
 	private int balance;
 	private String acctStatus;
 
@@ -29,9 +35,10 @@ public class Accounts {
 		this.acctID = acctID;
 	}
 
-	public int getBalance() {
-		return balance;
-	}
+	// не использую, отключил
+	//public int getBalance() {
+	//	return balance;
+	//}
 
 	public void setBalance(int balance) {
 		this.balance = balance;

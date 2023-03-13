@@ -13,9 +13,9 @@ import ru.savkins.service.CustomerService;
 
 @RestController
 public class CustomerController {
-	@Autowired
+
 	private CustomerService customerService;
-	@Autowired
+
 	private AccountController accountController;
 
 	@PostMapping("/customer")

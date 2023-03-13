@@ -8,7 +8,7 @@ import ru.savkins.model.Accounts;
 // здесь сервисный слой - бизнес-логика сервиса, хотя здесь ее минимум
 @Service
 public class AccountService {
-	@Autowired
+
 	private AccountsRepository accountRepository;
 
 	public void createAccount(Accounts acct) {
