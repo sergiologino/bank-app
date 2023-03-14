@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "c78258d4-e0c6-42fb-a8f9-1a312538c523",
+		"name": "Diploma",
+		"description": "Запросы к методам проекта\n\nСавкин С.С.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "15222650"
+	},
+	"item": [
+		{
+			"name": "customer",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer/1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer",
+						"1000"
+					]
+				},
+				"description": "получить данные по клиенту с указанным счетом"
+			},
+			"response": []
+		},
+		{
+			"name": "account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/22/balance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"22",
+						"balance"
+					]
+				},
+				"description": "Получить баланс по счету"
+			},
+			"response": []
+		},
+		{
+			"name": "account",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/1000",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1000"
+					]
+				},
+				"description": "Получить данные по счету"
+			},
+			"response": []
+		},
+		{
+			"name": "account/logs",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "add customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"acctID\": \"22\",\r\n\t\"custName\": \"Vasya\",\r\n\t\"city\": \"Moscow\",\r\n\t\"state\": \"none\",\r\n\t\"country\": \"RU\",\r\n\t\"phoneNo\": \"23456\",\r\n\t\"password\": \"pass123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/customer",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"customer"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putmoney",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/account/1000/putmoney/250",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"account",
+						"1000",
+						"putmoney",
+						"250"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

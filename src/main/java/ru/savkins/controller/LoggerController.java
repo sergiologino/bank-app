@@ -1,5 +1,6 @@
 package ru.savkins.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,6 +24,7 @@ public class LoggerController {
 	}
 
 	// showLog
+	@Operation(summary = "получить историю по id", description = "Получить историю операций по id")
 	@GetMapping("/account/{acctID}/logs")
 	public Logger showLog(@PathVariable int acctID) {
 		return loggerService.showLog(acctID);
@@ -33,6 +35,7 @@ public class LoggerController {
 	}
 
 	// getAccountHistorybyDates
+	@Operation(summary = "получить историю по интервалу", description = "Получить историю операций по id и интервалу дат")
 	@GetMapping("/logger/{acctID}/{dateFrom}/{dateTo}")
 	public Optional<Object> getLogDates(@PathVariable int acctID, Date dateFrom, Date dateTo) {
 		return LoggerService.getLogInfo(acctID, dateFrom, dateTo);
